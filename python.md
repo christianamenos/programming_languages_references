@@ -1,3 +1,5 @@
+# Python reference
+
 ## Comments and print
 ```python
 # This is a single line comment
@@ -125,10 +127,9 @@ print('This is my friend {name} and he is {age}'.format(age=32, name='John')) # 
 
 print('I have {money:.2f}€ in my bank account'.format(money=4.1)) # String substitution with fixed decimals
 # This prints: I have 4.10€ in my bank account
-
 ```
 
-More string functions:
+ Complete list of string functions:
 * `capitalize()`: Converts the first character to upper case
 * `casefold()`: Converts string into lower case
 * `center()`: Returns a centered string
@@ -178,6 +179,12 @@ More string functions:
 
 ```python
 this_is_a_number = 123 # Variable names follow snake case format
+print(this_is_a_number)
+# Prints: 123
+
+weight, height = 70.6, 172.8 # Multiple assignment
+print(weight)
+# Prints: 70.6
 ```
 
 ### Type and conversion (aka cast)
@@ -212,10 +219,91 @@ print(float('3.4')) # Converts string to float
 
 print(int('3.4')) # Cannot convert from string to other types if it doesn't follow the expected format
 # This prints: Value Error
+```
+
+## Data Structures
+
+### Lists
+
+Lists are containers that allow to define **mutable** **ordered** sequence of elements.
+
+```python
+week_days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] # List declaration
+
+print(week_days)
+# Prints: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
+print(week_days[0]) # Accessing to specific element (index), starting on 0
+# Prints: Monday
+
+print(week_days[-1]) # Accessing to specific element (index), starting from the right with negative index
+# Prints: Sunday
+
+another_list = [1, False, 3.2, 'four'] # We can declare a list of mixed types
+print(another_list)
+# Prints: [1, False, 3.2, 'four']
+
+print(week_days[0:5]) # We can get a slice (a portion or sublist) of the list, first number indicates where we start and it's inclusive, the right one where it ends and it's exclusive
+# Prints: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+print(week_days[5:]) # You don't need to specify the last element if you want the items in the list from the start element
+# Prints: ['Saturday', 'Sunday']]
+print(week_days[:5]) # Similarly, you don't need to specify the first element if it's the first in the list
+# Prints: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+print('Saturday' in week_days) # Check if an element is in a list
+# Prints: True
+print('January' not in week_days) # Check if an element is not in a list
+# Prints: False
+
+print(", ".join(week_days))
+# Prints: 'Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday'
 
 ```
+
+Complete list of string functions:
+* `append()`: Adds an element at the end of the list
+* `clear()`: Removes all the elements from the list
+* `copy()`: Returns a copy of the list
+* `count()`: Returns the number of elements with the specified value
+* `extend()`: Add the elements of a list (or any iterable), to the end of the current list
+* `index()`: Returns the index of the first element with the specified value
+* `insert()`: Adds an element at the specified position
+* `join()`: Join is a string method that takes a list of strings as an argument, and returns a string consisting of the list elements joined by a separator string.
+* `len()`: Returns how many elements are in a list
+* `max`: Returns the greatest element of the list. How the greatest element is determined depends on what type objects are in the list. The maximum element in a list of numbers is the largest number. The maximum elements in a list of strings is element that would occur last if the list were sorted alphabetically. This works because the the max function is defined in terms of the greater than comparison operator. The max function is undefined for lists that contain elements from different, incomparable types.
+* `min`: Returns the smallest element in a list. min is the opposite of max, which returns the largest element in a list.
+* `pop()`: Removes the element at the specified position
+* `remove()`: Removes the item with the specified value
+* `reverse()`: Reverses the order of the list
+* `sort()`: Sorts the list
+* `sorted()`: Returns a copy of a list in order from smallest to largest, leaving the list unchanged
+
+### Tuples
+
+Tuples are containers that allow to define an **immutable** **ordered** sequence of elements. They are very usefol for very closely related elements, like X and Y coordinates of a vector.
+
+```python
+position = (3, 4)
+position2 = 4, 6 # Alternative syntax (can omit the parenthesis)
+
+print("X:", position[0]) # Accessing to an element of the tuple
+# Prints: X: 3
+
+x, y = position # Tuple unpacking
+print(y)
+# Prints: 4
+```
+
+### Sets
+
+
+
 
 
 
 ## References
 * [PEP8 - Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
+* [Python official doc](https://docs.python.org/3.9/)
+* [HackerRank - Python](https://www.hackerrank.com/domains/python)
+* [Codewars - Python](https://www.codewars.com/dashboard)
+* [Udacity course](https://classroom.udacity.com/courses/ud1110)
