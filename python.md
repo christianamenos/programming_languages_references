@@ -280,7 +280,7 @@ Complete list of string functions:
 
 ### Tuples
 
-Tuples are containers that allow to define an **immutable** **ordered** sequence of elements. They are very usefol for very closely related elements, like X and Y coordinates of a vector.
+Tuples are containers that allow to define an **immutable** **ordered** sequence of elements. They are very useful for very closely related elements, like X and Y coordinates of a vector.
 
 ```python
 position = (3, 4)
@@ -296,8 +296,29 @@ print(y)
 
 ### Sets
 
+Sets are containers of unique elements without a particular order (actually the order can change). Can only be mutated adding new elements or by removing some elements randomly.
 
+```python
+animals = {"dog", "cat", "fish", "bird", "cat"} # Defines a set
+print(animals)
+# Prints: {"dog", "cat", "fish", "bird"}, note cat is not repeated
 
+numbers = [1, 2, 3, 4, 2, 1]
+unique_numbers = set(numbers)
+print(unique_numbers)
+# Prints: {1,2,3,4}
+
+print("dog" in animals) # Check if an element is in a set
+# Prints: True
+
+animals.add("snake") # Add an element to a set
+print(animals)
+# Prints: {"dog", "cat", "fish", "bird", "snake"}
+
+animals.pop() # Removes a random element from the set
+print(animals)
+# Prints: {"cat", "fish", "bird", "snake"}
+```
 
 
 
