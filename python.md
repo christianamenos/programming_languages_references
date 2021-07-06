@@ -258,6 +258,18 @@ print('January' not in week_days) # Check if an element is not in a list
 print(", ".join(week_days))
 # Prints: 'Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday'
 
+a = [1, 2, 3]
+b = a
+c = [1, 2, 3]
+print(a == b) # Check equality
+# Prints: True (all values of the list match)
+print(a == b) # Check identity
+# Prints: True (both variables point to the same memory allocation)
+print(a == c) # Check equality
+# Prints: True (all values of the list match)
+print(a == c) # Check identity
+# Prints: False (both variables are different, do not point to the same memory allocation)
+
 ```
 
 Complete list of string functions:
@@ -320,7 +332,25 @@ print(animals)
 # Prints: {"cat", "fish", "bird", "snake"}
 ```
 
+### Dictionaries
 
+Dictionaries are mutable data containers that maps unique keys to values. Keys can be of any immutable type (integers, strings, tuples, ...). Keys and values can be of any type and do not need to be the same for all elements (they can even be other dictionaries).
+
+```python
+scores = {"John": 8.0, "Paul": 6.0, "Regina": 8.5} # Dictionary declaration
+
+print(scores["John"]) # Accessing an element
+# Prints: 8.0
+
+print("Regina" in scores) # Check if a key exists in the dictionary
+# Prints: True
+
+print(scores.get("Sarah")) # Accessing an nonexistent key can break the code, use get instead
+# Prints: None
+
+print(scores.get("Sarah", 9.0)) # Accessing an nonexistent key with default value
+# Prints: 9.0
+```
 
 ## References
 * [PEP8 - Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
